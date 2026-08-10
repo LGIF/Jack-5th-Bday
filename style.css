@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'LuckiestGuy';
+    src: url('LuckiestGuy-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'LuckiestGuy', sans-serif;
+    text-align: center;
+    color: yellow;
+    position: relative; /* Needed for bubble positioning */
+}
+
+/* Bubble container */
+.bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Keep behind text and buttons */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(173, 216, 230, 0.6);
+    border-radius: 50%;
+    animation: rise 10s linear infinite;
+}
+
+/* Bubble animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) scale(0.8);
+        opacity: 0;
+    }
+}
+
+#invite-text {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    z-index: 10;
+    font-weight: bold;
+    color: yellow;
+    font-size: 1.5em;
+}
+
+#playMusicBtn {
+  position: absolute;
+  bottom: 25%;        /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  /* styling as above */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #00bfff;
+    color: yellow;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+
+#rsvp-form {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    z-index: 10;
+}
