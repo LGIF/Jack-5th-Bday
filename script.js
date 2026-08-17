@@ -28,39 +28,50 @@ playBtn.addEventListener('click', () => {
 });
 
 // --------------------
-// Animated Bubbles
+// --------------------
+// Birthday Party Theme: Confetti + Balloons
 // --------------------
 const bubblesContainer = document.querySelector('.bubbles');
 
-function createBubble() {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
+const confettiColors = ['#FF6B6B','#FFD93D','#6BCB77','#4D96FF','#A66FFF','#FF8AB8'];
 
-    // Random horizontal position
-    bubble.style.left = Math.random() * 100 + '%';
+function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
 
-    // Random size
-    const size = Math.random() * 30 + 10; // 10–40px
-    bubble.style.width = size + 'px';
-    bubble.style.height = size + 'px';
+    confetti.style.left = Math.random() * 100 + '%';
+    const size = Math.random() * 10 + 6; // 6–16px
+    confetti.style.width = size + 'px';
+    confetti.style.height = (size * 0.6) + 'px';
+    confetti.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
 
-    // Random speed
-    bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    bubblesContainer.appendChild(confetti);
 
-    // Random transparency
-    const opacity = Math.random() * 0.5 + 0.3;
-
-    // Random ocean colors
-    const blue = Math.floor(Math.random() * 156 + 100);
-    const green = Math.floor(Math.random() * 100 + 150);
-    bubble.style.background = `rgba(${Math.floor(Math.random() * 100)}, ${green}, ${blue}, ${opacity})`;
-
-    bubblesContainer.appendChild(bubble);
-
-    setTimeout(() => {
-        bubble.remove();
-    }, 11000);
+    setTimeout(() => confetti.remove(), 8000);
 }
 
-// Keep spawning bubbles
-setInterval(createBubble, 300);
+function createBalloon() {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+
+    balloon.style.left = Math.random() * 90 + 5 + '%';
+    const size = Math.random() * 40 + 40; // 40–80px
+    balloon.style.width = size + 'px';
+    balloon.style.height = (size * 1.2) + 'px';
+    balloon.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+    balloon.style.animationDuration = (Math.random() * 6 + 8) + 's';
+
+    const string = document.createElement('div');
+    string.classList.add('string');
+    balloon.appendChild(string);
+
+    bubblesContainer.appendChild(balloon);
+
+    setTimeout(() => balloon.remove(), 14000);
+}
+
+// Spawn confetti frequently and balloons occasionally
+setInterval(createConfetti, 150);
+setInterval(createBalloon, 3000);
