@@ -24,24 +24,51 @@ body {
     z-index: 0; /* Keep behind text and buttons */
 }
 
-.bubble {
+/* Confetti pieces */
+.confetti {
     position: absolute;
-    bottom: -100px;
-    background: rgba(173, 216, 230, 0.6);
-    border-radius: 50%;
-    animation: rise 10s linear infinite;
+    top: -10px;
+    z-index: 1;
+    opacity: 0.95;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    will-change: transform;
 }
 
-/* Bubble animation */
-@keyframes rise {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-110vh) scale(0.8);
-        opacity: 0;
-    }
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -120px;
+    border-radius: 60% 60% 50% 50%;
+    box-shadow: inset -5px -8px rgba(0,0,0,0.1);
+    animation-name: floatUp;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.balloon .string {
+    position: absolute;
+    bottom: -40px;
+    width: 2px;
+    height: 40px;
+    background: #333;
+    border-radius: 1px;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity:1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity:0.9; }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(0.95); opacity: 0.95; }
 }
 
 #invite-text {
