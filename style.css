@@ -87,11 +87,11 @@ body {
 }
 
 /* Slight desktop tweak for very small desktops/tablets */
-@media (min-width: 481px) and (max-width: 900px) {
+@media (min-width: 281px) and (max-width: 900px) {
   #invite-text {
     width: 36%;
     font-size: 1.2em;
-    max-width: 520px;
+    max-width: 420px;
   }
 }
 
