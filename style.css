@@ -87,7 +87,7 @@ body {
 }
 
 /* Slight desktop tweak for very small desktops/tablets */
-@media (min-width: 281px) and (max-width: 480px) {
+@media (min-width: 281px) and (max-width: 800px) {
   #invite-text {
     width: 25%;
     font-size: 1.2em;
