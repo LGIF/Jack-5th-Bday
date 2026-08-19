@@ -97,7 +97,7 @@ body {
 
 #playMusicBtn {
   position: absolute;
-  bottom: 25%;        /* adjust as needed */
+  bottom: 50%;        /* adjust as needed */
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
