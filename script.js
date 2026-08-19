@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let bg = new Image();
-bg.src = 'ChuckeCheese.png';
+bg.src = 'image1.jpg';
 
 bg.onload = () => {
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
