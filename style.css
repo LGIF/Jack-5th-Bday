@@ -79,7 +79,7 @@ body {
     max-width: 420px;
     z-index: 20;
     font-weight: bold;
-    color: rgb(0, 140, 255);
+    color: rgb(255, 0, 0);
     font-size: 1.35em;
     text-align: left;
     padding: 0.4rem;
@@ -87,7 +87,7 @@ body {
 }
 
 /* Slight desktop tweak for very small desktops/tablets */
-@media (min-width: 281px) and (max-width: 900px) {
+@media (min-width: 281px) and (max-width: 480px) {
   #invite-text {
     width: 5%;
     font-size: 1.2em;
@@ -134,7 +134,7 @@ button {
 @media (max-width: 480px) {
   /* Make invite text compact, left-aligned, and readable on small screens */
   #invite-text {
-    top: 6%;
+    top: 55%;
     left: 5%;
     width: 88%;
     max-width: none;
