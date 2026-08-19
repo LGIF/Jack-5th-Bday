@@ -74,8 +74,8 @@ body {
 #invite-text {
     position: absolute;
     top: 25%;
-    left: 10%;
-    width: 32%;            /* narrower so canvas/logo remain visible */
+    left: 0%;
+    width: 30%;            /* narrower so canvas/logo remain visible */
     max-width: 420px;
     z-index: 20;
     font-weight: bold;
