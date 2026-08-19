@@ -89,7 +89,7 @@ body {
 /* Slight desktop tweak for very small desktops/tablets */
 @media (min-width: 281px) and (max-width: 480px) {
   #invite-text {
-    width: 5%;
+    width: 25%;
     font-size: 1.2em;
     max-width: 420px;
   }
@@ -136,7 +136,7 @@ button {
   #invite-text {
     top: 55%;
     left: 5%;
-    width: 88%;
+    width: 75%;
     max-width: none;
     z-index: 20;
     font-weight: bold;
